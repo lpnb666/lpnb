@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="baidu.mapper.baiduMapper">
+	<resultMap id="Herfs" type="HerfList">
+		<id property="herfId" column="herf_id"></id>
+		<result property="herfValue" column="herf_value"></result>
+	</resultMap>
+
+	<select id="queryPic" resultType="Pic">
+    	SELECT * FROM pic where pic_id = #{picId}
+	</select>
+
+	<select id="queryHerfs" resultMap="Herfs">
+		Select * from herf
+	</select>
+
+	<update id="updatePic" parameterType="Pic">
+		update pic set pic_url = #{picUrl} where pic_id = #{picId}
+	</update>
+
+	<update id="updateHerf" parameterType="Herf">
+		update herf set herf_value = #{herfValue} where herf_id = #{herfId}
+	</update>
+</mapper>
