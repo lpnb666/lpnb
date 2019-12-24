@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/login.css"/>
+    <title>ajax</title>
+    <script type="text/javascript" src="js/common/jquery-1.11.3.min.js"></script>
+        <meta charset="UTF-8">
+<script type="text/javascript">
+	function aj1(){
+	$.ajax(
+		{
+		url:"https://music.niubishanshan.top/api/v2/music/search/%E5%94%90%E4%BA%BA/1/10",
+		dataType:"html",
+		success: function(data){
+			$("#abcd").append("\'"+data+"\'")
+				}
+			}
+	)
+	}
+</script>
+</head>
+<body>
+<input type="button" value="ajax" onClick="aj1()"/>
+
+<div id="abcd"></div>
+</body>
+</html>
